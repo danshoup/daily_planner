@@ -10,7 +10,7 @@ This is the fifth assigment for MSU Coding Bootcamp; to create a daily planner t
 ### Livepage Link
 [Daniel Shoup's Daily Planner Page](https://danshoup.github.io/daily_planner/)
 
-### Coding Quiz Screenshot
+### Daily Planner Screenshot
 
 ![Application Screen Shot](./assets/images/plannerScreenshot.png)
 
