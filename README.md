@@ -12,7 +12,7 @@ This is the fifth assigment for MSU Coding Bootcamp; to create a daily planner t
 
 ### Coding Quiz Screenshot
 
-![Application Screen Shot](./assets/images/tempScreenshot.png)
+![Application Screen Shot](./assets/images/plannerScreenshot.png)
 
 ### Acceptance Criteria Summary
 
