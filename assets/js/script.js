@@ -4,6 +4,7 @@ $("#currentDay").text(today.format("dddd, MMMM Mo - YYYY"));
 
 function init() {
     renderStoredText();
+    backgroundColor();
 }
 
 function renderStoredText() {
@@ -78,6 +79,27 @@ button9.addEventListener("click", function(event) {
     localStorage.setItem("text5pm", text5pm.value);
 });
 
+// Function to check the hour against the row hour
+function backgroundColor() {
+    // Variable to grab the current hour in 24hr format
+    var currentHour = moment().format("ha");
+    console.log(currentHour);
+    var rowHour = document.querySelector(".hour").innerHTML;
+    console.log(rowHour);
 
+    if (currentHour = rowHour) {
+        document.querySelector("textarea").classList.add("past");
+    }
+    // // If current hour is greater than the row hour, turn text area background grey
+    // if (currentHour > rowHour) {
+    //     document.querySelectorAll("textarea").classList.add("past");
+    // // If current hour equals row hour, turn text are background red
+    // } else if (currentHour === rowHour) {
+    //     document.querySelectorAll("textarea").classList.add("present");
+    // // Turn all other text area backgrounds green
+    // } else {
+    //     document.querySelectorAll("textarea").classList.add("future");
+    // }
+}
 
 init();

@@ -14,7 +14,7 @@ This is the fifth assigment for MSU Coding Bootcamp; to create a daily planner t
 
 ![Application Screen Shot](./assets/images/screenshot.png)
 
-### Acceptance Criteria Summary
+### Acceptance Criteria Summaryadd
 
 - Current day is displayed at the top of the calendar when opened.
 
