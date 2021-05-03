@@ -1,10 +1,15 @@
-// Use Moment.js to format today's date for the jumbotron
-var today = moment();
-$("currentDay").text(today.format("dddd, MMMM Mo - YYYY"));
 
 function init() {
+    renderMoment();
     renderStoredText();
     backgroundColor();
+}
+
+function renderMoment() {
+    // Use Moment.js to format today's date for the jumbotron
+    var today = moment().format("dddd, MMMM Mo - YYYY");
+    $("#currentDay").text(today);
+    console.log(today);
 }
 
 function renderStoredText() {
