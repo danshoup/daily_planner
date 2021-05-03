@@ -86,15 +86,12 @@ function backgroundColor() {
     console.log(currentHour);
     // Variable to get all textarea elements that have the class "text"
     var timeBlockText = document.querySelectorAll(".text");
-    console.log(timeBlockText);
 
     for (var i = 0; i < timeBlockText.length; i++) {
         // Get IDs from the i variable string
         var textAreaID = timeBlockText[i].id;
-        console.log(textAreaID);
         // Get element
         var workID = document.getElementById(timeBlockText[i].id)
-        console.log(workID);
         // Change background color as per class in CSS
         if (textAreaID < currentHour) {
             $(workID).addClass("past");
