@@ -1,6 +1,6 @@
 // Use Moment.js to format today's date for the jumbotron
 var today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Mo - YYYY"));
+$("currentDay").text(today.format("dddd, MMMM Mo - YYYY"));
 
 function init() {
     renderStoredText();
@@ -21,25 +21,25 @@ function renderStoredText() {
 }
 
 // Individual text input boxes for each hour
-var text9am = document.querySelector("#text1");
-var text10am = document.querySelector("#text2");
-var text11am = document.querySelector("#text3");
-var text12pm = document.querySelector("#text4");
-var text1pm = document.querySelector("#text5");
-var text2pm = document.querySelector("#text6");
-var text3pm = document.querySelector("#text7");
-var text4pm = document.querySelector("#text8");
-var text5pm = document.querySelector("#text9");
+var text9am = document.getElementById("09");
+var text10am = document.getElementById("10");
+var text11am = document.getElementById("11");
+var text12pm = document.getElementById("12");
+var text1pm = document.getElementById("13");
+var text2pm = document.getElementById("14");
+var text3pm = document.getElementById("15");
+var text4pm = document.getElementById("16");
+var text5pm = document.getElementById("17");
 // Variable for each save button.
-var button1 = document.querySelector("#btn1");
-var button2 = document.querySelector("#btn2");
-var button3 = document.querySelector("#btn3");
-var button4 = document.querySelector("#btn4");
-var button5 = document.querySelector("#btn5");
-var button6 = document.querySelector("#btn6");
-var button7 = document.querySelector("#btn7");
-var button8 = document.querySelector("#btn8");
-var button9 = document.querySelector("#btn9");
+var button1 = document.getElementById("btn1");
+var button2 = document.getElementById("btn2");
+var button3 = document.getElementById("btn3");
+var button4 = document.getElementById("btn4");
+var button5 = document.getElementById("btn5");
+var button6 = document.getElementById("btn6");
+var button7 = document.getElementById("btn7");
+var button8 = document.getElementById("btn8");
+var button9 = document.getElementById("btn9");
 
 // Event listener for each save button
 button1.addEventListener("click", function(event) {
@@ -79,27 +79,31 @@ button9.addEventListener("click", function(event) {
     localStorage.setItem("text5pm", text5pm.value);
 });
 
-// Function to check the hour against the row hour
+// Function change background of textarea based on the hour
 function backgroundColor() {
     // Variable to grab the current hour in 24hr format
-    var currentHour = moment().format("ha");
+    var currentHour = moment().format("H");
     console.log(currentHour);
-    var rowHour = document.querySelector(".hour").innerHTML;
-    console.log(rowHour);
+    // Variable to get all textarea elements that have the class "text"
+    var timeBlockText = document.querySelectorAll(".text");
+    console.log(timeBlockText);
 
-    if (currentHour = rowHour) {
-        document.querySelector("textarea").classList.add("past");
-    }
-    // // If current hour is greater than the row hour, turn text area background grey
-    // if (currentHour > rowHour) {
-    //     document.querySelectorAll("textarea").classList.add("past");
-    // // If current hour equals row hour, turn text are background red
-    // } else if (currentHour === rowHour) {
-    //     document.querySelectorAll("textarea").classList.add("present");
-    // // Turn all other text area backgrounds green
-    // } else {
-    //     document.querySelectorAll("textarea").classList.add("future");
-    // }
+    for (var i = 0; i < timeBlockText.length; i++) {
+        // Get IDs from the i variable string
+        var textAreaID = timeBlockText[i].id;
+        console.log(textAreaID);
+        // Get element
+        var workID = document.getElementById(timeBlockText[i].id)
+        console.log(workID);
+        // Change background color as per class in CSS
+        if (textAreaID < currentHour) {
+            $(workID).addClass("past");
+        } else if (textAreaID == currentHour) {
+            $(workID).addClass("present");
+        } else {
+            $(workID).addClass("future");
+        }        
+    }    
 }
 
 init();
