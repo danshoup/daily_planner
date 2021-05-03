@@ -50,38 +50,56 @@ var button9 = document.getElementById("btn9");
 button1.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text9am", text9am.value);
+    $(button1.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button1.firstElementChild.style.color="red");
 });
 button2.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text10am", text10am.value);
+    $(button2.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button2.firstElementChild.style.color="red");
 });
 button3.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text11am", text11am.value);
+    $(button3.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button3.firstElementChild.style.color="red");
 });
 button4.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text12pm", text12pm.value);
+    $(button4.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button4.firstElementChild.style.color="red");
 });
 button5.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text1pm", text1pm.value);
+    $(button5.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button5.firstElementChild.style.color="red");
 });
 button6.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text2pm", text2pm.value);
+    $(button6.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button6.firstElementChild.style.color="red");
 });
 button7.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text3pm", text3pm.value);
+    $(button7.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button7.firstElementChild.style.color="red");
 });
 button8.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text4pm", text4pm.value);
+    $(button8.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button8.firstElementChild.style.color="red");
 });
 button9.addEventListener("click", function(event) {
     event.preventDefault();
     localStorage.setItem("text5pm", text5pm.value);
+    $(button9.firstElementChild).removeClass("fa-unlock-alt").addClass("fa-lock");
+    $(button9.firstElementChild.style.color="red");
 });
 
 // Function change background of textarea based on the hour
@@ -104,8 +122,9 @@ function backgroundColor() {
             $(workID).addClass("present");
         } else {
             $(workID).addClass("future");
-        }        
-    }    
+        } 
+                
+    } 
 }
 
 init();
