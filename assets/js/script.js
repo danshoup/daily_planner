@@ -7,7 +7,7 @@ function init() {
 
 function renderMoment() {
     // Use Moment.js to format today's date for the jumbotron
-    var today = moment().format("dddd, MMMM Mo - YYYY");
+    var today = moment([]).format("dddd, LL");
     $("#currentDay").text(today);
     console.log(today);
 }
@@ -45,6 +45,19 @@ var button6 = document.getElementById("btn6");
 var button7 = document.getElementById("btn7");
 var button8 = document.getElementById("btn8");
 var button9 = document.getElementById("btn9");
+
+
+// One event listener for all buttons; intended to toggle icon of clicked item to locked/saved or unlocked/not saved.
+var parentDiv = document.querySelector(".time-block");
+parentDiv.addEventListener("click", buttonClick);
+
+function buttonClick(event) {
+    if (event.target !== event.currentTarget) {
+        var clickedItem = event.target.id;
+        console.log(clickedItem);
+    }
+    event.stopPropagation();
+}
 
 // Event listener for each save button
 button1.addEventListener("click", function(event) {
